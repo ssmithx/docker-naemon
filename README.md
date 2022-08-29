@@ -18,7 +18,7 @@ The command below will setup a Naemon container with email notification support 
  docker run --name naemon -h naemon -d -p 80:80 \
   -e SMTP_HOST="smtp.example.com" \
   -e SMTP_PORT=25 \
-  -e SMTP_USER=naemonbot@example.com \
+  -e SMTP_LOGIN=naemonbot@example.com \
   -e SMTP_PASS=naemonbotpass \
   -e NOTIFICATION_FROM="naemon@example.com"\
   -v /somepath/naemon_mnt:/data xetusoss/naemon:TAG
@@ -68,7 +68,7 @@ The command below will setup a container with Thruk configured to authenticate u
  docker run --name naemon -h naemon -d -p 80:80 \
   -e SMTP_HOST="smtp.example.com" \
   -e SMTP_PORT=25 \
-  -e SMTP_USER=naemonbot@example.com \
+  -e SMTP_LOGIN=naemonbot@example.com \
   -e SMTP_PASS=naemonbotpass \
   -e WEB_LDAP_HOST=ldap.example.com \
   -e WEB_LDAP_BIND_DN="uid=naemonuser,dc=example,dc=com"\
